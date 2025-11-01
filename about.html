@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Fork in the Road VA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2C2C2C;
+            background: #FFFEF8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: #FFFEF8;
+            border-bottom: 3px solid #7FA068;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .brand {
+            font-family: Georgia, serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2A5434;
+            text-decoration: none;
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            color: #3B6F47;
+            font-style: italic;
+            margin-top: -5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: #2A5434;
+            text-decoration: none;
+            font-weight: 500;
+            padding-bottom: 3px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #3B6F47;
+            border-bottom-color: #D4A574;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #2A5434 0%, #3B6F47 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-family: Georgia, serif;
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #FAF5ED;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 20px;
+        }
+
+        h2 {
+            font-family: Georgia, serif;
+            font-size: 2.5rem;
+            color: #2A5434;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-family: Georgia, serif;
+            font-size: 1.6rem;
+            color: #2A5434;
+            margin-bottom: 1rem;
+        }
+
+        /* Story Section */
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .story-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+
+        .team-member {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+
+        .team-member .role {
+            color: #7FA068;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .team-member .quote {
+            font-style: italic;
+            color: #3B6F47;
+            border-left: 3px solid #D4A574;
+            padding-left: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* Values Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .value {
+            padding: 2rem;
+            background: white;
+            border-top: 4px solid #D4A574;
+            border-radius: 5px;
+        }
+
+        /* Mission Section */
+        .mission {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .mission h3 {
+            color: #3B6F47;
+            margin-bottom: 1rem;
+        }
+
+        .mission p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        /* Philosophy Points */
+        .philosophy-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .point {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .point h3 {
+            color: #3B6F47;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Farm Partners */
+        .partners-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .partner {
+            padding: 1rem;
+        }
+
+        .partner strong {
+            color: #2A5434;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #3B6F47 0%, #2A5434 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: #FAF5ED;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: 2px solid transparent;
+            margin: 0.5rem;
+        }
+
+        .btn-primary {
+            background: #D4A574;
+            color: #2A5434;
+            border-color: #D4A574;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: #D4A574;
+            border-color: #D4A574;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #2A5434;
+        }
+
+        /* Footer */
+        footer {
+            background: #2A5434;
+            color: #FAF5ED;
+            padding: 40px 20px 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            color: #D4A574;
+            margin-bottom: 0.5rem;
+            font-family: Georgia, serif;
+        }
+
+        .footer-section a {
+            color: #FAF5ED;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: #D4A574;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid #3B6F47;
+        }
+
+        /* Background colors */
+        .bg-cream {
+            background: #FAF5ED;
+        }
+
+        .bg-white {
+            background: white;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .team-grid,
+            .values-grid,
+            .philosophy-points {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div>
+                <a href="index.html" class="brand">Fork in the Road VA</a>
+                <div class="tagline">Farm Fresh. Street Smart.</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="catering.html">Catering</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Our Story</h1>
+        <p>From our family to yours</p>
+    </div>
+
+    <!-- Main Story Section -->
+    <section class="bg-cream">
+        <div class="container">
+            <h2>It Started with a Simple Desire</h2>
+            <div class="story-content">
+                <p>Our story began in our own kitchen, preparing meals for our daughter. We wanted to serve her food we could trust – wholesome, flavorful, and bursting with real ingredients. That simple desire grew into something bigger: a mission to bring that same care and quality to every table we serve.</p>
+                
+                <p>Fork in the Road VA was born from the belief that exceptional food starts with exceptional ingredients. Virginia's rich agricultural heritage provides everything we need to create memorable meals, yet we noticed a gap – no one was bringing these farm-fresh flavors directly to corporate events, weddings, and community gatherings through mobile catering.</p>
+                
+                <p>So we took the fork in the road less traveled. We built relationships with local farmers, learned their stories, and made a commitment: 95% of our ingredients would come from Virginia farms within 50 miles of our kitchen. It's not always the easiest path, but it's the right one.</p>
+                
+                <p>Today, Fork in the Road VA bridges the gap between Virginia's thriving farms and your celebrations. Every dish we serve honors the land it came from and the people who grew it. We're not just caterers – we're storytellers, using food to connect our community to its agricultural roots.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="bg-white">
+        <div class="container">
+            <h2>Meet the Team</h2>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <h3>Chef Tre Coleman</h3>
+                    <p class="role">Founder & Executive Chef</p>
+                    <p>With over a decade of restaurant experience, Tre brings technical expertise and creative vision to every dish. His culinary philosophy centers on simplicity and respect – letting Virginia's ingredients shine through careful preparation and balanced flavors. Tre personally visits our partner farms, understanding not just what we're cooking, but why it matters.</p>
+                    <p class="quote">"Great food doesn't need to be complicated. When you start with ingredients this good, your job is simply not to mess them up."</p>
+                </div>
+                
+                <div class="team-member">
+                    <h3>Christa Coleman</h3>
+                    <p class="role">Co-Founder & Director of Hospitality</p>
+                    <p>Christa ensures every Fork in the Road event feels personal and welcoming. Her hospitality expertise and attention to detail mean your guests experience not just a meal, but genuine warmth and care. From initial planning through event execution, Christa makes sure everything runs smoothly while keeping the human touch that sets us apart.</p>
+                    <p class="quote">"We're serving more than food – we're creating moments and memories. Every event is an opportunity to show what Virginia hospitality really means."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Values -->
+    <section class="bg-cream">
+        <div class="container">
+            <h2>Our Mission & Values</h2>
+            
+            <div class="mission">
+                <h3>Mission</h3>
+                <p>Fork in the Road VA brings Virginia's farms to every table – without sacrificing taste, comfort, or quality. We believe exceptional food starts with exceptional ingredients, and that supporting local farmers strengthens our entire community.</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value">
+                    <h3>Farm-First Sourcing</h3>
+                    <p>We prioritize Virginia farmers and transparent supply chains. Every ingredient has a story, and we're proud to tell it.</p>
+                </div>
+                <div class="value">
+                    <h3>Seasonal Integrity</h3>
+                    <p>Our menus honor what's fresh and available. We don't force tomatoes in January or squash in May.</p>
+                </div>
+                <div class="value">
+                    <h3>Genuine Hospitality</h3>
+                    <p>We serve food we'd proudly feed our own family, with the warmth and care of a home-cooked meal.</p>
+                </div>
+                <div class="value">
+                    <h3>Community Investment</h3>
+                    <p>Every meal supports local farms and strengthens Virginia's food economy.</p>
+                </div>
+                <div class="value">
+                    <h3>Sustainable Operations</h3>
+                    <p>We minimize environmental impact through compostable packaging, efficient logistics, and zero-waste practices.</p>
+                </div>
+                <div class="value">
+                    <h3>Culinary Excellence</h3>
+                    <p>Restaurant-quality techniques meet genuine comfort food, creating dishes that are both sophisticated and approachable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Farm-to-Table -->
+    <section class="bg-white">
+        <div class="container">
+            <h2>Why Farm-to-Table Matters</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.1rem;">
+                In an era of global supply chains and year-round everything, we've chosen a different path. Farm-to-table isn't just a marketing term for us – it's a fundamental philosophy that shapes every decision we make.
+            </p>
+            
+            <div class="philosophy-points">
+                <div class="point">
+                    <h3>Flavor at Its Peak</h3>
+                    <p>Ingredients harvested at the perfect moment and delivered within days simply taste better. There's no substitute for a tomato ripened on the vine or greens picked that morning.</p>
+                </div>
+                
+                <div class="point">
+                    <h3>Supporting Local Economy</h3>
+                    <p>Every dollar spent with Fork in the Road circulates through our local economy. We're not just feeding people; we're sustaining family farms and rural livelihoods.</p>
+                </div>
+                
+                <div class="point">
+                    <h3>Environmental Responsibility</h3>
+                    <p>Sourcing within 50 miles dramatically reduces our carbon footprint. Seasonal menus mean we're working with nature, not against it.</p>
+                </div>
+                
+                <div class="point">
+                    <h3>Transparency & Trust</h3>
+                    <p>We can tell you exactly where your food comes from because we know the farmers personally. That level of transparency builds trust and connection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Farm Partners Preview -->
+    <section class="bg-cream">
+        <div class="container">
+            <h2>Our Farm Partners</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">We're proud to work with these Virginia farms:</p>
+            
+            <div class="partners-preview">
+                <div class="partner">
+                    <strong>Level Up Micro Farms</strong><br>
+                    Microgreens & Herbs
+                </div>
+                <div class="partner">
+                    <strong>Bibb Forest Farm</strong><br>
+                    Grass-fed Beef & Organic Vegetables
+                </div>
+                <div class="partner">
+                    <strong>M & B Farm Produce</strong><br>
+                    Seasonal Vegetables
+                </div>
+                <div class="partner">
+                    <strong>Grafted Farm</strong><br>
+                    Pasture-raised Poultry
+                </div>
+                <div class="partner">
+                    <strong>Kilravock Ranch</strong><br>
+                    Eggs, Goat Cheese, Pork
+                </div>
+                <div class="partner">
+                    <strong>Willowsford Farm</strong><br>
+                    Certified Organic Produce
+                </div>
+                <div class="partner">
+                    <strong>Garden Medicinals</strong><br>
+                    Culinary & Medicinal Herbs
+                </div>
+                <div class="partner">
+                    <strong>Featheridge Farm</strong><br>
+                    Fresh Eggs & Fruits
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Join Our Story</h2>
+            <p>Let's create something memorable together</p>
+            <div>
+                <a href="catering.html" class="btn btn-primary">Plan Your Event</a>
+                <a href="menu.html" class="btn btn-outline">View Our Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Fork in the Road VA</h4>
+                <p>Farm Fresh. Street Smart.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><a href="tel:540-807-9045">540-807-9045</a></p>
+                <p><a href="mailto:catering@forkintheroadva.com">catering@forkintheroadva.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Fork in the Road VA. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

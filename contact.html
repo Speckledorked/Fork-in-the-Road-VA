@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Fork in the Road VA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2C2C2C;
+            background: #FFFEF8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: #FFFEF8;
+            border-bottom: 3px solid #7FA068;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .brand {
+            font-family: Georgia, serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2A5434;
+            text-decoration: none;
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            color: #3B6F47;
+            font-style: italic;
+            margin-top: -5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: #2A5434;
+            text-decoration: none;
+            font-weight: 500;
+            padding-bottom: 3px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #3B6F47;
+            border-bottom-color: #D4A574;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #2A5434 0%, #3B6F47 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-family: Georgia, serif;
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #FAF5ED;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 20px;
+        }
+
+        h2 {
+            font-family: Georgia, serif;
+            font-size: 2.5rem;
+            color: #2A5434;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-family: Georgia, serif;
+            font-size: 1.6rem;
+            color: #2A5434;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Methods */
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .contact-method {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .contact-method h3 {
+            color: #3B6F47;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-link {
+            color: #D4A574;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .contact-link:hover {
+            color: #3B6F47;
+        }
+
+        .detail {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2A5434;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px;
+            border: 2px solid #E8E8E8;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #7FA068;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .form-submit {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: 2px solid transparent;
+            cursor: pointer;
+            background: #D4A574;
+            color: #2A5434;
+            border-color: #D4A574;
+        }
+
+        .btn:hover {
+            background: #2A5434;
+            color: white;
+            border-color: #2A5434;
+        }
+
+        .form-note {
+            color: #666;
+            font-size: 0.875rem;
+            margin-top: 1rem;
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .info-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .info-card h3 {
+            color: #3B6F47;
+            margin-bottom: 1rem;
+        }
+
+        .info-card ul {
+            list-style-position: inside;
+        }
+
+        .info-card li {
+            margin-bottom: 0.5rem;
+            color: #444;
+        }
+
+        /* FAQ Section */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .faq-item h3 {
+            color: #3B6F47;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #3B6F47 0%, #2A5434 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: #FAF5ED;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #2A5434;
+        }
+
+        /* Footer */
+        footer {
+            background: #2A5434;
+            color: #FAF5ED;
+            padding: 40px 20px 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            color: #D4A574;
+            margin-bottom: 0.5rem;
+            font-family: Georgia, serif;
+        }
+
+        .footer-section a {
+            color: #FAF5ED;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: #D4A574;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid #3B6F47;
+        }
+
+        /* Background colors */
+        .bg-cream {
+            background: #FAF5ED;
+        }
+
+        .bg-white {
+            background: white;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .contact-form {
+                padding: 2rem 1.5rem;
+            }
+            
+            .form-row,
+            .info-grid,
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div>
+                <a href="index.html" class="brand">Fork in the Road VA</a>
+                <div class="tagline">Farm Fresh. Street Smart.</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="catering.html">Catering</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Contact Us</h1>
+        <p>Let's plan something delicious together</p>
+    </div>
+
+    <!-- Contact Information -->
+    <section class="bg-cream">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem; font-size: 1.1rem;">
+                Ready to bring farm-fresh flavors to your next event? We'd love to hear from you. Whether you're planning a corporate gathering, wedding celebration, or community festival, let's create something memorable together.
+            </p>
+            
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <h3>Call Us</h3>
+                    <p><a href="tel:540-807-9045" class="contact-link">540-807-9045</a></p>
+                    <p class="detail">Best for immediate questions and urgent bookings</p>
+                </div>
+                
+                <div class="contact-method">
+                    <h3>Email Us</h3>
+                    <p><a href="mailto:catering@forkintheroadva.com" class="contact-link">catering@forkintheroadva.com</a></p>
+                    <p class="detail">Perfect for detailed inquiries and menu planning</p>
+                </div>
+                
+                <div class="contact-method">
+                    <h3>Response Time</h3>
+                    <p style="color: #D4A574; font-size: 1.2rem; font-weight: 600;">Within 24 hours</p>
+                    <p class="detail">We respond to all inquiries within one business day</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="bg-white">
+        <div class="container">
+            <h2>Request a Catering Quote</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">Tell us about your event and we'll create a custom proposal featuring seasonal Virginia ingredients.</p>
+            
+            <form class="contact-form" action="#" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company/Organization</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="event-type">Event Type *</label>
+                        <select id="event-type" name="event-type" required>
+                            <option value="">Select event type</option>
+                            <option value="corporate">Corporate Event</option>
+                            <option value="wedding">Wedding</option>
+                            <option value="private">Private Party</option>
+                            <option value="festival">Festival/Market</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="event-date">Event Date *</label>
+                        <input type="date" id="event-date" name="event-date" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="guest-count">Estimated Guest Count *</label>
+                        <input type="number" id="guest-count" name="guest-count" min="1" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="event-location">Event Location/Venue</label>
+                        <input type="text" id="event-location" name="event-location" placeholder="City, VA">
+                    </div>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="service-type">Service Style Preference</label>
+                    <select id="service-type" name="service-type">
+                        <option value="">Select service style</option>
+                        <option value="buffet">Buffet Service</option>
+                        <option value="plated">Plated Dinner</option>
+                        <option value="stations">Chef-Attended Stations</option>
+                        <option value="truck">Food Truck Service</option>
+                        <option value="cocktail">Cocktail Reception</option>
+                        <option value="unsure">Not Sure Yet</option>
+                    </select>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="dietary">Dietary Requirements or Restrictions</label>
+                    <textarea id="dietary" name="dietary" rows="3" placeholder="Please list any allergies, dietary preferences, or special requirements"></textarea>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="message">Tell Us About Your Event</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Share your vision, special requests, or any questions you have"></textarea>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="referral">How Did You Hear About Us?</label>
+                    <input type="text" id="referral" name="referral" placeholder="Friend, Google, Festival, etc.">
+                </div>
+                
+                <div class="form-submit">
+                    <button type="submit" class="btn">Send Inquiry</button>
+                    <p class="form-note">* Required fields</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Service Information -->
+    <section class="bg-cream">
+        <div class="container">
+            <h2>Quick Reference</h2>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Service Areas</h3>
+                    <p>Central Virginia including Louisa, Orange, Spotsylvania, Albemarle, Hanover, Fluvanna, and Goochland counties</p>
+                    <p style="color: #666; font-style: italic; margin-top: 1rem;">Travel fees may apply beyond 30 miles from Louisa, VA</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Booking Timeline</h3>
+                    <ul>
+                        <li>Corporate Events: 2+ weeks notice</li>
+                        <li>Weddings: 3-4 weeks notice</li>
+                        <li>Festivals: 2+ weeks notice</li>
+                        <li>Peak season (May-Oct): Book early!</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Minimum Requirements</h3>
+                    <ul>
+                        <li>Corporate: $3,500 minimum</li>
+                        <li>Weddings: 50 guests minimum</li>
+                        <li>Private Events: 30 guests minimum</li>
+                        <li>Festival Service: No minimum</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="bg-white">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Do you accommodate dietary restrictions?</h3>
+                    <p>Absolutely! We can accommodate vegetarian, vegan, gluten-free, and most allergy requirements with advance notice. Our seasonal menus naturally offer diverse options.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Can we customize the menu?</h3>
+                    <p>Yes! While we have set packages, we love creating custom menus that showcase seasonal ingredients and match your vision. Custom menus may affect pricing.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do you provide staff for events?</h3>
+                    <p>Yes, our packages include appropriate staffing. For buffet service, we provide setup and maintenance. Premium packages include dedicated service staff.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What about plates and utensils?</h3>
+                    <p>We provide high-quality compostable serviceware standard. China and glassware are available for premium events.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Is a tasting included?</h3>
+                    <p>Complimentary tastings are offered for weddings with 100+ guests. Other events can schedule tastings for a fee that's credited toward your booking.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What's your cancellation policy?</h3>
+                    <p>We require a 50% deposit to secure your date. Cancellations made 14+ days in advance receive a full refund. Please ask about our complete policy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Don't wait – popular dates book quickly, especially during peak season!</p>
+            <div class="cta-buttons">
+                <a href="tel:540-807-9045" class="btn">Call Now: 540-807-9045</a>
+                <a href="menu.html" class="btn btn-outline">Browse Our Menus</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Fork in the Road VA</h4>
+                <p>Farm Fresh. Street Smart.</p>
+                <p>Virginia's first farm-to-table mobile catering company</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Contact</h4>
+                <p><strong>Phone:</strong> <a href="tel:540-807-9045">540-807-9045</a></p>
+                <p><strong>Email:</strong> <a href="mailto:catering@forkintheroadva.com">catering@forkintheroadva.com</a></p>
+                <p><strong>Chef:</strong> Tre Coleman</p>
+            </div>
+            <div class="footer-section">
+                <h4>Service Areas</h4>
+                <p>Proudly serving Central Virginia including Louisa, Orange, Spotsylvania, and Albemarle counties</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Fork in the Road VA. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

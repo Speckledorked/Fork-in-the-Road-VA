@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catering Services | Fork in the Road VA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2C2C2C;
+            background: #FFFEF8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: #FFFEF8;
+            border-bottom: 3px solid #7FA068;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .brand {
+            font-family: Georgia, serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2A5434;
+            text-decoration: none;
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            color: #3B6F47;
+            font-style: italic;
+            margin-top: -5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: #2A5434;
+            text-decoration: none;
+            font-weight: 500;
+            padding-bottom: 3px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #3B6F47;
+            border-bottom-color: #D4A574;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #2A5434 0%, #3B6F47 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-family: Georgia, serif;
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #FAF5ED;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 20px;
+        }
+
+        h2 {
+            font-family: Georgia, serif;
+            font-size: 2.5rem;
+            color: #2A5434;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-family: Georgia, serif;
+            font-size: 1.6rem;
+            color: #2A5434;
+            margin-bottom: 1rem;
+        }
+
+        /* Service Cards */
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+
+        .service-features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .service-features li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .service-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #7FA068;
+            font-weight: bold;
+        }
+
+        .service-details {
+            font-weight: 600;
+            color: #3B6F47;
+            margin-top: 1rem;
+        }
+
+        /* Packages */
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .package-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-top: 4px solid #7FA068;
+        }
+
+        .package-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .package-card.featured {
+            border-top-color: #D4A574;
+            border-width: 6px;
+            transform: scale(1.02);
+        }
+
+        .package-card h3 {
+            color: #2A5434;
+            margin-bottom: 0.5rem;
+        }
+
+        .package-card .price {
+            font-size: 1.5rem;
+            color: #3B6F47;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .package-card ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .package-card ul li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #E8E8E8;
+        }
+
+        /* Process Steps */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            background: #D4A574;
+            color: white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #3B6F47 0%, #2A5434 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: #FAF5ED;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: 2px solid transparent;
+            margin: 0.5rem;
+        }
+
+        .btn-primary {
+            background: #D4A574;
+            color: #2A5434;
+            border-color: #D4A574;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: #D4A574;
+            border-color: #D4A574;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #2A5434;
+        }
+
+        /* Add-ons */
+        .addon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .addon {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .addon h4 {
+            color: #3B6F47;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2A5434;
+            color: #FAF5ED;
+            padding: 40px 20px 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            color: #D4A574;
+            margin-bottom: 0.5rem;
+            font-family: Georgia, serif;
+        }
+
+        .footer-section a {
+            color: #FAF5ED;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: #D4A574;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid #3B6F47;
+        }
+
+        /* Background colors */
+        .bg-cream {
+            background: #FAF5ED;
+        }
+
+        .bg-white {
+            background: white;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .package-grid,
+            .process-steps,
+            .addon-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .package-card.featured {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div>
+                <a href="index.html" class="brand">Fork in the Road VA</a>
+                <div class="tagline">Farm Fresh. Street Smart.</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="catering.html" class="active">Catering</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Catering Services</h1>
+        <p>Bringing Virginia's farms to your celebration</p>
+    </div>
+
+    <!-- Introduction -->
+    <section class="bg-cream">
+        <div class="container">
+            <h2>Farm-to-Table Catering That Tells a Story</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8;">
+                Every Fork in the Road event is more than just a meal – it's a celebration of Virginia agriculture. Our catering brings the same commitment to local sourcing, seasonal menus, and genuine hospitality that defines our brand. Whether you're planning a corporate gathering, wedding reception, or community festival, we'll create an experience your guests will remember.
+            </p>
+        </div>
+    </section>
+
+    <!-- Service Types -->
+    <section class="bg-white">
+        <div class="container">
+            <h2>Our Catering Services</h2>
+            
+            <div class="service-card">
+                <h3>Corporate Events</h3>
+                <p>Align your company events with sustainability values while impressing clients and employees. Our ESG-friendly menus showcase local farms and seasonal ingredients, creating natural conversation starters and memorable experiences.</p>
+                <ul class="service-features">
+                    <li>Executive lunches and dinners</li>
+                    <li>Team building events and retreats</li>
+                    <li>Product launches and client entertainment</li>
+                    <li>Holiday parties and milestone celebrations</li>
+                    <li>Farm sourcing cards for each dish</li>
+                    <li>Sustainability reporting available</li>
+                </ul>
+                <p class="service-details"><strong>Minimum spend:</strong> $3,500 | <strong>Lead time:</strong> 2 weeks</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Weddings & Private Events</h3>
+                <p>Make your special day uniquely Virginia with a menu that reflects the season and supports local farms. From intimate rehearsal dinners to grand receptions, we'll craft a dining experience as memorable as your celebration.</p>
+                <ul class="service-features">
+                    <li>Cocktail hour appetizers and stations</li>
+                    <li>Plated dinners or buffet service</li>
+                    <li>Late-night snack offerings</li>
+                    <li>Custom menu development</li>
+                    <li>Coordination with venue and planners</li>
+                    <li>Complimentary tasting for weddings over 100 guests</li>
+                </ul>
+                <p class="service-details"><strong>Starting at:</strong> $35/person | <strong>Lead time:</strong> 3-4 weeks</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Festivals & Community Events</h3>
+                <p>Bring farm-fresh flavors to festivals, farmers markets, and community gatherings. Our mobile kitchen delivers high-volume service without sacrificing quality or our commitment to local sourcing.</p>
+                <ul class="service-features">
+                    <li>À la carte service from our truck</li>
+                    <li>Festival-friendly menu options</li>
+                    <li>Quick service for large crowds</li>
+                    <li>Branded presence at your event</li>
+                    <li>Compostable packaging standard</li>
+                </ul>
+                <p class="service-details"><strong>Pricing:</strong> À la carte $14-22/item | <strong>Lead time:</strong> 2 weeks</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages -->
+    <section class="bg-cream">
+        <div class="container">
+            <h2>Catering Packages</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">All packages feature 95% Virginia-sourced ingredients and seasonal menu options</p>
+            
+            <div class="package-grid">
+                <div class="package-card">
+                    <h3>Essential Package</h3>
+                    <p class="price">$35-40 per person</p>
+                    <ul>
+                        <li>2 protein options</li>
+                        <li>2 seasonal sides</li>
+                        <li>Mixed green salad</li>
+                        <li>Artisan bread & butter</li>
+                        <li>Buffet service</li>
+                        <li>Compostable serviceware</li>
+                    </ul>
+                </div>
+
+                <div class="package-card featured">
+                    <h3>Premium Package</h3>
+                    <p class="price">$45-55 per person</p>
+                    <ul>
+                        <li>3 protein options</li>
+                        <li>3 seasonal sides</li>
+                        <li>Appetizer station</li>
+                        <li>Salad & bread service</li>
+                        <li>Farm sourcing cards</li>
+                        <li>Staff-attended buffet</li>
+                        <li>Premium compostable serviceware</li>
+                    </ul>
+                </div>
+
+                <div class="package-card">
+                    <h3>Signature Package</h3>
+                    <p class="price">$65-85 per person</p>
+                    <ul>
+                        <li>Custom menu design</li>
+                        <li>Multiple course options</li>
+                        <li>Chef-attended stations</li>
+                        <li>Passed appetizers</li>
+                        <li>Dessert selection</li>
+                        <li>Dedicated event coordinator</li>
+                        <li>China & glassware available</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhancement Options -->
+    <section class="bg-white">
+        <div class="container">
+            <h2>Enhancement Options</h2>
+            <div class="addon-grid">
+                <div class="addon">
+                    <h4>Beverage Service</h4>
+                    <p>Local craft beverages, coffee, tea service</p>
+                </div>
+                <div class="addon">
+                    <h4>Dessert Stations</h4>
+                    <p>Seasonal desserts featuring local fruits and dairy</p>
+                </div>
+                <div class="addon">
+                    <h4>Interactive Chef Stations</h4>
+                    <p>Live cooking demonstrations and made-to-order items</p>
+                </div>
+                <div class="addon">
+                    <h4>Farm Partner Meet & Greet</h4>
+                    <p>Invite our farmers to share their stories</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="bg-cream">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <h3>Initial Consultation</h3>
+                    <p>Share your vision, guest count, and dietary needs</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <h3>Custom Proposal</h3>
+                    <p>Receive a seasonal menu tailored to your event</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <h3>Tasting & Refinement</h3>
+                    <p>Sample dishes and finalize your selections</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <h3>Event Execution</h3>
+                    <p>Relax while we deliver an unforgettable experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="bg-white">
+        <div class="container">
+            <h2>Service Areas</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">We proudly serve Central Virginia including:</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; text-align: center; max-width: 800px; margin: 0 auto;">
+                <div>Louisa County</div>
+                <div>Orange County</div>
+                <div>Spotsylvania County</div>
+                <div>Albemarle County</div>
+                <div>Hanover County</div>
+                <div>Fluvanna County</div>
+                <div>Goochland County</div>
+                <div>And surrounding areas</div>
+            </div>
+            <p style="text-align: center; margin-top: 2rem; color: #666; font-style: italic;">Travel fees may apply for events more than 30 miles from Louisa, VA</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Plan Your Event?</h2>
+            <p>Let's create something memorable together</p>
+            <div>
+                <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+                <a href="menu.html" class="btn btn-outline">View Sample Menus</a>
+            </div>
+            <div style="margin-top: 2rem;">
+                <p>Questions? Call us at <a href="tel:540-807-9045" style="color: #D4A574;">540-807-9045</a></p>
+                <p>or email <a href="mailto:catering@forkintheroadva.com" style="color: #D4A574;">catering@forkintheroadva.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Fork in the Road VA</h4>
+                <p>Farm Fresh. Street Smart.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><a href="tel:540-807-9045">540-807-9045</a></p>
+                <p><a href="mailto:catering@forkintheroadva.com">catering@forkintheroadva.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Fork in the Road VA. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
