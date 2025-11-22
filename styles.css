@@ -304,6 +304,32 @@ footer {
     margin-bottom: 0.5rem;
 }
 
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #FAF5ED;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #D4A574;
+    color: #2A5434;
+    transform: translateY(-3px);
+}
+
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;

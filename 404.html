@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Fork in the Road VA</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .error-container {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .error-code {
+            font-family: Georgia, serif;
+            font-size: 8rem;
+            color: #D4A574;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .error-title {
+            font-family: Georgia, serif;
+            font-size: 2.5rem;
+            color: #2A5434;
+            margin: 1rem 0;
+        }
+
+        .error-message {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 1rem auto 2rem;
+            line-height: 1.6;
+        }
+
+        .error-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .helpful-links {
+            background: #FAF5ED;
+            padding: 40px 20px;
+        }
+
+        .helpful-links h3 {
+            font-family: Georgia, serif;
+            color: #2A5434;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .link-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .link-card h4 {
+            font-family: Georgia, serif;
+            color: #3B6F47;
+            margin-bottom: 0.5rem;
+        }
+
+        .link-card p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .link-card a {
+            color: #D4A574;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .link-card a:hover {
+            color: #2A5434;
+        }
+
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 5rem;
+            }
+
+            .error-title {
+                font-size: 2rem;
+            }
+
+            .error-links {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div>
+                <a href="index.html" class="brand">Fork in the Road VA</a>
+                <div class="tagline">Farm Fresh. Street Smart.</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="catering.html">Catering</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Error Container -->
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Page Not Found</h1>
+        <p class="error-message">
+            Looks like you've wandered off the beaten path! This page doesn't exist,
+            but we'd love to help you find what you're looking for.
+        </p>
+        <div class="error-links">
+            <a href="index.html" class="btn btn-primary">Back to Home</a>
+            <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+        </div>
+    </div>
+
+    <!-- Helpful Links -->
+    <section class="helpful-links">
+        <div class="container">
+            <h3>Popular Pages</h3>
+            <div class="link-grid">
+                <div class="link-card">
+                    <h4>🍽️ Menu</h4>
+                    <p>Check out our seasonal farm-to-table menu featuring local Virginia ingredients</p>
+                    <a href="menu.html">View Menu →</a>
+                </div>
+                <div class="link-card">
+                    <h4>🎉 Catering Services</h4>
+                    <p>Learn about our corporate, wedding, and festival catering options</p>
+                    <a href="catering.html">See Services →</a>
+                </div>
+                <div class="link-card">
+                    <h4>👨‍🍳 About Us</h4>
+                    <p>Meet the team and learn about our farm-fresh philosophy</p>
+                    <a href="about.html">Our Story →</a>
+                </div>
+                <div class="link-card">
+                    <h4>📞 Get in Touch</h4>
+                    <p>Ready to plan your event? Contact us for a custom quote</p>
+                    <a href="contact.html">Contact Us →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Fork in the Road VA</h4>
+                <p>Farm Fresh. Street Smart.</p>
+                <p>Virginia's first farm-to-table mobile catering company</p>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" title="Follow us on Facebook">f</a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" title="Follow us on Instagram">📷</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <p><a href="menu.html">Seasonal Menu</a></p>
+                <p><a href="catering.html">Catering Services</a></p>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Service Areas</h4>
+                <p>Louisa, Orange, Spotsylvania, Albemarle, and surrounding Central Virginia counties</p>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <p><a href="tel:540-807-9045">540-807-9045</a></p>
+                <p><a href="mailto:catering@forkintheroadva.com">catering@forkintheroadva.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Fork in the Road VA. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="analytics.js"></script>
+</body>
+</html>
