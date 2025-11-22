@@ -153,6 +153,14 @@ if (document.querySelector('form.contact-form')) {
 
     // Enhanced form submission
     form.addEventListener('submit', function(e) {
+        // Check if form service is configured
+        const formAction = form.getAttribute('action');
+        if (formAction && formAction.includes('YOUR_FORM_ID')) {
+            e.preventDefault();
+            alert('⚠️ Form Not Configured\n\nThe contact form needs to be set up by the site administrator.\n\nPlease contact us directly:\n📞 540-807-9045\n✉️ catering@forkintheroadva.com\n\nSee FORM_SETUP.md for configuration instructions.');
+            return;
+        }
+
         // Validate all fields before submission
         let isValid = true;
         inputs.forEach(input => {
@@ -180,16 +188,15 @@ if (document.querySelector('form.contact-form')) {
         submitBtn.disabled = true;
         submitBtn.style.opacity = '0.7';
 
-        // Note: Formspree will handle the actual submission
-        // This just provides better UX feedback
+        // Note: Form handler (Formspree/Netlify) will process the submission
+        // This provides better UX feedback during submission
 
-        // If using Formspree, it will redirect or show confirmation
-        // We'll restore the button after a delay as fallback
+        // Fallback to restore button (in case of slow response)
         setTimeout(function() {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
             submitBtn.style.opacity = '1';
-        }, 3000);
+        }, 5000);
     });
 
     // Add CSS for error states
