@@ -81,6 +81,18 @@ Fork-in-the-Road-VA/
 ### Deployment
 Changes pushed to the main branch are automatically deployed to GitHub Pages.
 
+## ⚙️ Setup Required
+
+### Contact Form Configuration
+The contact form needs to be connected to a form handling service before it will work. See **[FORM_SETUP.md](FORM_SETUP.md)** for detailed instructions.
+
+**Quick Setup Options:**
+1. **Netlify Forms** (if hosting on Netlify) - Already configured, works automatically
+2. **Formspree** (works anywhere) - 5-minute setup, free tier available
+3. **Email fallback** - Phone/email links work immediately
+
+Until configured, visitors can use the phone and email links on the contact page.
+
 ## 📧 Contact
 
 - **Phone**: 540-807-9045
