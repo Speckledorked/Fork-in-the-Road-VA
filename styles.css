@@ -491,8 +491,8 @@ footer {
 }
 
 .package-card.featured {
-    border: 3px solid #D4A574;
-    transform: scale(1.05);
+    border: none;
+    transform: scale(1);
 }
 
 .package-card h3 {
