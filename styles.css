@@ -423,3 +423,544 @@ footer {
 .menu-overlay.active {
     display: block;
 }
+
+/* ===========================
+   Catering Page Styles
+   =========================== */
+
+.service-card {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    border-left: 5px solid #D4A574;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+}
+
+.service-card h3 {
+    color: #2A5434;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.service-features li {
+    padding: 0.5rem 0 0.5rem 2rem;
+    position: relative;
+    color: #444;
+}
+
+.service-features li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #7FA068;
+    font-weight: bold;
+}
+
+.service-details {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #E8E8E8;
+    color: #666;
+}
+
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.package-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+}
+
+.package-card.featured {
+    border: 3px solid #D4A574;
+    transform: scale(1.05);
+}
+
+.package-card h3 {
+    color: #2A5434;
+    margin-bottom: 1rem;
+}
+
+.package-card .price {
+    font-size: 1.5rem;
+    color: #3B6F47;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.package-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.package-card ul li {
+    padding: 0.5rem 0 0.5rem 2rem;
+    position: relative;
+    color: #444;
+}
+
+.package-card ul li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #7FA068;
+    font-weight: bold;
+}
+
+.addon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.addon {
+    background: #FAF5ED;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.addon h4 {
+    color: #2A5434;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.addon p {
+    color: #666;
+    margin: 0;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-top: 3rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.step {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    position: relative;
+    border-left: 5px solid #D4A574;
+}
+
+.step-number {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: #D4A574;
+    color: #2A5434;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.step h3 {
+    color: #2A5434;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
+.step p {
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 0.8rem;
+}
+
+.step p:last-child {
+    margin-bottom: 0;
+}
+
+.cta-section {
+    background: linear-gradient(135deg, #3B6F47 0%, #2A5434 100%);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.cta-section h2 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    color: #FAF5ED;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* ===========================
+   Menu Page Styles
+   =========================== */
+
+.menu-intro {
+    background: #FAF5ED;
+    padding: 60px 20px;
+}
+
+.menu-intro h2 {
+    margin-bottom: 1.5rem;
+}
+
+.menu-intro p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+}
+
+.menu-section {
+    padding: 80px 20px;
+    background: white;
+}
+
+.section-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.menu-item {
+    background: #FAF5ED;
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 5px solid #D4A574;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.menu-item h3 {
+    color: #2A5434;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.menu-item .description {
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.menu-item .farm-source {
+    color: #7FA068;
+    font-style: italic;
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+.seasonal-menu {
+    padding: 80px 20px;
+    background: white;
+}
+
+.season-dates {
+    text-align: center;
+    color: #D4A574;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.upcoming-seasons {
+    padding: 80px 20px;
+    background: #FAF5ED;
+}
+
+.season-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.season-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.season-card h3 {
+    color: #2A5434;
+    margin-bottom: 0.5rem;
+}
+
+.season-card .dates {
+    color: #D4A574;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.season-card p {
+    color: #666;
+    line-height: 1.7;
+}
+
+.dietary-section {
+    padding: 80px 20px;
+    background: white;
+}
+
+.dietary-list {
+    list-style: none;
+    padding: 0;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.dietary-list li {
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    color: #444;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.dietary-list li:last-child {
+    border-bottom: none;
+}
+
+/* ===========================
+   About Page Styles
+   =========================== */
+
+.story-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.story-content p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: #444;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.team-member {
+    background: #FAF5ED;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+}
+
+.team-member h3 {
+    color: #2A5434;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.team-member .role {
+    color: #D4A574;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.team-member p {
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.team-member .quote {
+    font-style: italic;
+    color: #3B6F47;
+    border-left: 4px solid #D4A574;
+    padding-left: 1.5rem;
+    margin-top: 1.5rem;
+    font-size: 1.05rem;
+}
+
+.mission {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    margin-bottom: 3rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mission h3 {
+    color: #2A5434;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.mission p {
+    color: #444;
+    line-height: 1.8;
+    font-size: 1.15rem;
+    text-align: center;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.value {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.value:hover {
+    transform: translateY(-5px);
+}
+
+.value h3 {
+    color: #2A5434;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.value p {
+    color: #666;
+    line-height: 1.7;
+}
+
+.philosophy-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.point {
+    background: #FAF5ED;
+    padding: 2rem;
+    border-radius: 12px;
+    border-top: 4px solid #D4A574;
+}
+
+.point h3 {
+    color: #2A5434;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.point p {
+    color: #444;
+    line-height: 1.8;
+}
+
+.partners-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.partner {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.partner strong {
+    color: #2A5434;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .package-card.featured {
+        transform: scale(1);
+    }
+
+    .process-steps {
+        gap: 2rem;
+    }
+
+    .step {
+        padding: 2rem 1.5rem;
+    }
+
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .menu-items {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .season-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .values-grid, .philosophy-points {
+        grid-template-columns: 1fr;
+    }
+}
