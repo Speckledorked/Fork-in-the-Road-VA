@@ -1,4 +1,5 @@
 // Fork in the Road VA - Analytics Configuration
+    'fr 
 
 // Google Analytics 4 Configuration
 // To enable analytics:
@@ -10,7 +11,7 @@
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'YOUR_GA4_MEASUREMENT_ID', {
+gtag('config', 'G-NJXXZNW7TS', {
     'anonymize_ip': true,
     'cookie_flags': 'SameSite=None;Secure'
 });
