@@ -1,4 +1,5 @@
 // Fork in the Road VA - Analytics Configuration
+    'fr 
 
 // Google Analytics 4 Configuration
 // To enable analytics:
@@ -7,15 +8,13 @@
 // 3. Replace 'YOUR_GA4_MEASUREMENT_ID' below with your actual ID
 // 4. Uncomment the code below
 
-/*
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'YOUR_GA4_MEASUREMENT_ID', {
+gtag('config', 'G-NJXXZNW7TS', {
     'anonymize_ip': true,
     'cookie_flags': 'SameSite=None;Secure'
 });
-*/
 
 // Custom Event Tracking
 // Track important user interactions
