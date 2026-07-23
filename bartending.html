@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional bartending services for weddings, corporate events, and private parties in Central Virginia. Licensed bartenders, custom cocktail menus, full bar setup and breakdown included.">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://forkintheroadva.com/bartending.html">
+    <meta property="og:title" content="Professional Bartending Services for Weddings & Events | Fork in the Road VA">
+    <meta property="og:description" content="Licensed bartenders, custom cocktail menus, and full bar setup for weddings, corporate events, and private parties in Central Virginia.">
+    <meta property="og:image" content="https://forkintheroadva.com/og-image.jpg">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Professional Bartending Services for Weddings & Events | Fork in the Road VA">
+    <meta name="twitter:description" content="Licensed bartenders, custom cocktail menus, and full bar setup for weddings, corporate events, and private parties in Central Virginia.">
+    <meta name="twitter:image" content="https://forkintheroadva.com/og-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://forkintheroadva.com/bartending.html">
+
+    <title>Professional Bartending Services for Weddings & Events | Fork in the Road VA</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* ============================================================
+           BARTENDING PAGE — PAGE-SPECIFIC STYLES
+           Base styles come from styles.css. These extend and adapt
+           the design system for a dark, upscale bartending aesthetic.
+           ============================================================ */
+
+        /* ------------------------------------------------------------------
+           HERO: Dark atmospheric overlay on background image placeholder.
+           REPLACE: Swap the url() value with your actual bar/cocktail photo.
+           The dark fallback color ensures the page looks good without an image.
+           ------------------------------------------------------------------ */
+        .hero-bartending {
+            background-color: #1A2A20;
+            background-image:
+                linear-gradient(rgba(12, 22, 15, 0.72), rgba(12, 22, 15, 0.72)),
+                url('REPLACE_WITH_BARTENDING_HERO_IMAGE');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 140px 20px;
+            text-align: center;
+        }
+
+        .hero-bartending h1 {
+            font-family: Georgia, serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            max-width: 820px;
+            margin: 0 auto 1.25rem;
+            line-height: 1.25;
+            text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.45);
+        }
+
+        .hero-bartending .hero-sub {
+            font-size: 1.2rem;
+            color: #FAF5ED;
+            max-width: 640px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.75;
+        }
+
+        /* Section headings with optional sub-text */
+        .section-heading {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-heading h2 {
+            color: #2A5434;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-heading p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 660px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ------------------------------------------------------------------
+           WHO IT'S FOR — event type cards
+           ------------------------------------------------------------------ */
+        .event-type-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 2rem;
+        }
+
+        .event-type-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #D4A574;
+            transition: transform 0.3s ease;
+        }
+
+        .event-type-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .event-type-card .event-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .event-type-card h3 {
+            color: #2A5434;
+            font-family: Georgia, serif;
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .event-type-card p {
+            color: #666;
+            line-height: 1.75;
+            font-size: 0.97rem;
+        }
+
+        /* ------------------------------------------------------------------
+           WHAT'S INCLUDED — checklist grid
+           ------------------------------------------------------------------ */
+        .includes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .include-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.85rem;
+            background: white;
+            padding: 1.25rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+        }
+
+        .include-item .check {
+            color: #7FA068;
+            font-size: 1.15rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .include-item .item-text strong {
+            color: #2A5434;
+            display: block;
+            margin-bottom: 0.2rem;
+            font-size: 0.97rem;
+        }
+
+        .include-item .item-text p {
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+            font-size: 0.93rem;
+        }
+
+        .staffing-note {
+            background: #FAF5ED;
+            border-left: 4px solid #D4A574;
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 2.5rem;
+            color: #444;
+            font-size: 0.97rem;
+            line-height: 1.7;
+        }
+
+        .staffing-note strong {
+            color: #2A5434;
+        }
+
+        .addons-box {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem 2.5rem;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .addons-box h4 {
+            color: #2A5434;
+            font-family: Georgia, serif;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .addons-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 0.4rem 2rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .addons-list li {
+            color: #666;
+            font-size: 0.95rem;
+            padding: 0.35rem 0 0.35rem 1.5rem;
+            position: relative;
+        }
+
+        .addons-list li::before {
+            content: "+";
+            position: absolute;
+            left: 0;
+            color: #D4A574;
+            font-weight: 700;
+        }
+
+        /* ------------------------------------------------------------------
+           PRICING — three-tier card layout
+           ------------------------------------------------------------------ */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 2rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid #D4A574;
+            box-shadow: 0 8px 30px rgba(212, 165, 116, 0.22);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #D4A574;
+            color: #2A5434;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 0.3rem 1.1rem;
+            border-radius: 20px;
+            white-space: nowrap;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+        }
+
+        .pricing-card h3 {
+            font-family: Georgia, serif;
+            color: #2A5434;
+            font-size: 1.45rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-per-head {
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: #3B6F47;
+            line-height: 1;
+            margin: 0.75rem 0 0.2rem;
+        }
+
+        .price-unit {
+            font-size: 0.9rem;
+            color: #7FA068;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-minimum {
+            font-size: 0.875rem;
+            color: #888;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #E8E8E8;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin: 0 0 2rem;
+            flex: 1;
+        }
+
+        .pricing-card ul li {
+            padding: 0.45rem 0 0.45rem 1.75rem;
+            position: relative;
+            color: #444;
+            font-size: 0.95rem;
+        }
+
+        .pricing-card ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #7FA068;
+            font-weight: bold;
+        }
+
+        .pricing-note {
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            font-style: italic;
+            max-width: 680px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ------------------------------------------------------------------
+           HOW IT WORKS — horizontal step cards
+           ------------------------------------------------------------------ */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .how-step {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
+            transition: transform 0.3s ease;
+        }
+
+        .how-step:hover {
+            transform: translateY(-4px);
+        }
+
+        .how-step .step-num {
+            width: 52px;
+            height: 52px;
+            background: #D4A574;
+            color: #2A5434;
+            border-radius: 50%;
+            font-size: 1.4rem;
+            font-weight: 700;
+            font-family: Georgia, serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .how-step h3 {
+            color: #2A5434;
+            font-family: Georgia, serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .how-step p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* ------------------------------------------------------------------
+           STATS BAR
+           REPLACE: all [PLACEHOLDER] values with verified business numbers
+           before publishing.
+           ------------------------------------------------------------------ */
+        .stats-bar {
+            background: linear-gradient(135deg, #2A5434 0%, #3B6F47 100%);
+            padding: 55px 20px;
+        }
+
+        .stats-inner {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: Georgia, serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #D4A574;
+            display: block;
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: #FAF5ED;
+            letter-spacing: 0.5px;
+        }
+
+        /* ------------------------------------------------------------------
+           TESTIMONIALS
+           ------------------------------------------------------------------ */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #7FA068;
+        }
+
+        .quote-mark {
+            font-family: Georgia, serif;
+            font-size: 4.5rem;
+            color: #D4A574;
+            line-height: 0.8;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .testimonial-card blockquote {
+            margin: 0 0 1.25rem;
+            color: #444;
+            font-style: italic;
+            line-height: 1.75;
+            font-size: 0.97rem;
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+            color: #2A5434;
+            font-size: 0.95rem;
+        }
+
+        .reviewer-event {
+            color: #7FA068;
+            font-size: 0.875rem;
+        }
+
+        /* ------------------------------------------------------------------
+           CONTACT / BOOKING FORM
+           ------------------------------------------------------------------ */
+        .contact-form-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ------------------------------------------------------------------
+           RESPONSIVE
+           ------------------------------------------------------------------ */
+        @media (max-width: 768px) {
+            .hero-bartending {
+                padding: 100px 20px;
+            }
+
+            .hero-bartending h1 {
+                font-size: 2.1rem;
+            }
+
+            .hero-bartending .hero-sub {
+                font-size: 1.05rem;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stats-inner {
+                gap: 2.5rem;
+            }
+
+            .contact-form-wrapper {
+                padding: 2rem 1.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-value {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div>
+                <a href="index.html" class="brand">Fork in the Road VA</a>
+                <div class="tagline">Farm Fresh. Street Smart.</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="catering.html">Catering</a></li>
+                <li><a href="bartending.html" class="active">Bartending</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ============================================================
+         HERO SECTION
+         REPLACE: Set a real photo URL in the CSS above (.hero-bartending
+         background-image). A dark bar scene, elegant cocktail flat lay,
+         or event bar setup photo works well here.
+         ============================================================ -->
+    <section class="hero-bartending">
+        <div class="container">
+            <h1>Professional Bartending for Weddings, Private Parties, and Corporate Events</h1>
+            <p class="hero-sub">Polished service, custom drink planning, and a seamless guest experience for events that need to feel effortless.</p>
+            <div class="hero-buttons">
+                <a href="#contact-form" class="btn btn-primary">Get a Quote</a>
+                <a href="#what-is-included" class="btn btn-secondary">See What's Included</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         WHO IT'S FOR
+         ============================================================ -->
+    <section class="bg-cream">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Who We Serve</h2>
+                <p>Whether you're planning a wedding, a company event, or a private party, our service is built around your specific needs — not a one-size-fits-all package.</p>
+            </div>
+
+            <div class="event-type-grid">
+
+                <!-- Weddings -->
+                <div class="event-type-card">
+                    <span class="event-icon">💍</span>
+                    <h3>Weddings</h3>
+                    <p>Your wedding day shouldn't include worrying about the bar. We handle drink planning, guest flow, and on-site execution so you and your family can stay present. Our staff is trained to keep service moving, read the room, and maintain a professional presence throughout the reception. We coordinate with your venue and other vendors so the bar is one less thing on your list.</p>
+                </div>
+
+                <!-- Corporate Events -->
+                <div class="event-type-card">
+                    <span class="event-icon">🏢</span>
+                    <h3>Corporate Events</h3>
+                    <p>Professional presentation isn't optional at a company event — it reflects on your brand. We arrive early, set up cleanly, and provide attentive, polished service that keeps your guests comfortable without drawing attention away from the event itself. From client dinners to holiday parties, we operate with the punctuality and discretion that professional settings demand.</p>
+                </div>
+
+                <!-- Private Parties -->
+                <div class="event-type-card">
+                    <span class="event-icon">🥂</span>
+                    <h3>Private Parties</h3>
+                    <p>Hosting is more enjoyable when you're not stuck behind the bar all night. We handle setup, service, and cleanup so you can actually enjoy your own party. Whether it's a milestone birthday, a rehearsal dinner, or a backyard gathering that calls for something elevated, we bring the bar to you and make it feel effortless from start to finish.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         WHAT'S INCLUDED
+         ============================================================ -->
+    <section id="what-is-included" class="bg-white">
+        <div class="container">
+            <div class="section-heading">
+                <h2>What's Included</h2>
+                <p>Every booking includes the essentials needed for a professional, well-run bar — no hidden fees, no last-minute surprises.</p>
+            </div>
+
+            <div class="includes-grid">
+
+                <div class="include-item">
+                    <span class="check">✓</span>
+                    <div class="item-text">
+                        <strong>Professional Licensed Bartenders</strong>
+                        <p>Licensed, insured, and experienced in event bar service. Our staff stays professional and keeps service moving all night.</p>
+                    </div>
+                </div>
+
+                <div class="include-item">
+                    <span class="check">✓</span>
+                    <div class="item-text">
+                        <strong>Custom Cocktail Menu Consultation</strong>
+                        <p>Before your event, we sit down to plan a drink menu that fits your guests, your theme, and your vision.</p>
+                    </div>
+                </div>
+
+                <div class="include-item">
+                    <span class="check">✓</span>
+                    <div class="item-text">
+                        <strong>Setup and Breakdown</strong>
+                        <p>We arrive ahead of your event to set up completely and handle all breakdown after — so you're not left cleaning up a bar at the end of the night.</p>
+                    </div>
+                </div>
+
+                <div class="include-item">
+                    <span class="check">✓</span>
+                    <div class="item-text">
+                        <strong>All Bar Equipment and Tools</strong>
+                        <p>Bar tools, ice service, bar mats, pourers, shakers, and everything needed for professional service. No need to source equipment separately.</p>
+                    </div>
+                </div>
+
+                <div class="include-item">
+                    <span class="check">✓</span>
+                    <div class="item-text">
+                        <strong>Non-Alcoholic Options</strong>
+                        <p>Every bar includes thoughtfully considered non-alcoholic service so all of your guests have something to enjoy — not just a glass of water.</p>
+                    </div>
+                </div>
+
+                <div class="include-item">
+                    <span class="check">✓</span>
+                    <div class="item-text">
+                        <strong>Guest-Count-Based Staffing</strong>
+                        <p>We staff each event based on your guest count so service stays smooth throughout the event, not just the first hour.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Staffing capacity note -->
+            <div class="staffing-note">
+                <strong>Staffing guidance:</strong> Typically 1 bartender serves up to 50 guests, 2 bartenders serve up to 100 guests, with additional staff recommended for larger events. We'll confirm the right staffing level during your consultation.
+            </div>
+
+            <!-- Add-ons available -->
+            <div class="addons-box">
+                <h4>Add-Ons Available</h4>
+                <ul class="addons-list">
+                    <li>Specialty glassware</li>
+                    <li>Signature cocktail creation</li>
+                    <li>Extended service hours</li>
+                    <li>Champagne toast service</li>
+                    <li>Premium mixers and garnishes</li>
+                    <li>Satellite bar or second bar setup</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+         PRICING
+         <!-- OPTIONAL: REPLACE PACKAGE PRICING IF BUSINESS MODEL CHANGES -->
+         ============================================================ -->
+    <section class="bg-cream" id="pricing">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Service Packages</h2>
+                <p>Transparent, per-head pricing with no hidden fees. Choose the tier that fits your event, and we'll dial in the details together.</p>
+            </div>
+
+            <!-- OPTIONAL: REPLACE PACKAGE PRICING IF BUSINESS MODEL CHANGES -->
+            <div class="pricing-grid">
+
+                <!-- Tier 1: Essential -->
+                <div class="pricing-card">
+                    <h3>Essential</h3>
+                    <div class="price-per-head">$16</div>
+                    <div class="price-unit">per person</div>
+                    <div class="price-minimum">50 guest minimum</div>
+                    <ul>
+                        <li>Beer and wine service</li>
+                        <li>Professional bartender service</li>
+                        <li>Standard mixers and garnishes</li>
+                        <li>Cups, napkins, bar tools, and setup</li>
+                        <li>Pre-event consultation</li>
+                    </ul>
+                    <a href="#contact-form" class="btn btn-primary">Book Essential</a>
+                </div>
+
+                <!-- Tier 2: Premium (featured) -->
+                <div class="pricing-card featured">
+                    <span class="featured-badge">Most Popular</span>
+                    <h3>Premium</h3>
+                    <div class="price-per-head">$24</div>
+                    <div class="price-unit">per person</div>
+                    <div class="price-minimum">75 guest minimum</div>
+                    <ul>
+                        <li>Everything in Essential</li>
+                        <li>Limited cocktail service</li>
+                        <li>Upgraded mixers and garnishes</li>
+                        <li>Custom bar planning support</li>
+                        <li>Enhanced event presentation</li>
+                    </ul>
+                    <a href="#contact-form" class="btn btn-primary">Book Premium</a>
+                </div>
+
+                <!-- Tier 3: Signature -->
+                <div class="pricing-card">
+                    <h3>Signature</h3>
+                    <div class="price-per-head">$32</div>
+                    <div class="price-unit">per person</div>
+                    <div class="price-minimum">100 guest minimum</div>
+                    <ul>
+                        <li>Everything in Premium</li>
+                        <li>Signature cocktail planning</li>
+                        <li>Expanded bar service experience</li>
+                        <li>Premium presentation details</li>
+                        <li>Best fit for weddings and formal events</li>
+                    </ul>
+                    <a href="#contact-form" class="btn btn-primary">Book Signature</a>
+                </div>
+
+            </div>
+
+            <p class="pricing-note">All packages include setup, breakdown, and a pre-event consultation. Alcohol not included — we work with your supplier or can recommend one.</p>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+         HOW IT WORKS
+         ============================================================ -->
+    <section class="bg-white">
+        <div class="container">
+            <div class="section-heading">
+                <h2>How It Works</h2>
+                <p>From first contact to event day, the process is designed to be straightforward. Here's what to expect.</p>
+            </div>
+
+            <div class="steps-grid">
+
+                <div class="how-step">
+                    <div class="step-num">1</div>
+                    <h3>Inquiry</h3>
+                    <p>Fill out the form below with your event date, guest count, and event type — we'll follow up within 24 hours.</p>
+                </div>
+
+                <div class="how-step">
+                    <div class="step-num">2</div>
+                    <h3>Consultation</h3>
+                    <p>We schedule a brief call to walk through your vision, confirm your details, and recommend the right package and staffing level.</p>
+                </div>
+
+                <div class="how-step">
+                    <div class="step-num">3</div>
+                    <h3>Confirm &amp; Plan</h3>
+                    <p>Once you're ready to move forward, we lock in your date, finalize the drink menu, and handle all logistics before your event.</p>
+                </div>
+
+                <div class="how-step">
+                    <div class="step-num">4</div>
+                    <h3>Event Day</h3>
+                    <p>We arrive early, set up completely, and run the bar from start to finish — all you have to do is show up and enjoy it.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         STATS BAR
+         REPLACE: Replace all [PLACEHOLDER] values with real, verified
+         business numbers before publishing this page live.
+         Do not publish placeholder stats — they undermine credibility.
+         ============================================================ -->
+    <div class="stats-bar">
+        <div class="stats-inner">
+
+            <!-- REPLACE WITH REAL STAT: total events served -->
+            <div class="stat-item">
+                <span class="stat-value">[PLACEHOLDER]</span>
+                <span class="stat-label">Events Served</span>
+            </div>
+
+            <!-- REPLACE WITH REAL STAT: years in business or bartending experience -->
+            <div class="stat-item">
+                <span class="stat-value">[PLACEHOLDER]</span>
+                <span class="stat-label">Years Experience</span>
+            </div>
+
+            <!-- REPLACE WITH REAL STAT: guest satisfaction score or rating -->
+            <div class="stat-item">
+                <span class="stat-value">[PLACEHOLDER]</span>
+                <span class="stat-label">Guest Satisfaction</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ============================================================
+         TESTIMONIALS
+         REPLACE: Replace all placeholder testimonials with real client
+         quotes before publishing. Get written permission before using
+         real names, photos, or event details.
+         ============================================================ -->
+    <section class="bg-cream">
+        <div class="container">
+            <div class="section-heading">
+                <h2>What Our Clients Say</h2>
+            </div>
+
+            <div class="testimonials-grid">
+
+                <!-- REPLACE WITH REAL TESTIMONIAL -->
+                <div class="testimonial-card">
+                    <span class="quote-mark">"</span>
+                    <blockquote>
+                        [REPLACE WITH REAL TESTIMONIAL — 2 to 3 sentences from an actual client. Focus on what made the service stand out: professionalism, ease, quality of service. Get written consent before using.]
+                    </blockquote>
+                    <div class="reviewer-name">[Client Name]</div>
+                    <div class="reviewer-event">[Event Type &mdash; Location, Year]</div>
+                </div>
+
+                <!-- REPLACE WITH REAL TESTIMONIAL -->
+                <div class="testimonial-card">
+                    <span class="quote-mark">"</span>
+                    <blockquote>
+                        [REPLACE WITH REAL TESTIMONIAL — 2 to 3 sentences from an actual client. Focus on what made the service stand out: professionalism, ease, quality of service. Get written consent before using.]
+                    </blockquote>
+                    <div class="reviewer-name">[Client Name]</div>
+                    <div class="reviewer-event">[Event Type &mdash; Location, Year]</div>
+                </div>
+
+                <!-- REPLACE WITH REAL TESTIMONIAL -->
+                <div class="testimonial-card">
+                    <span class="quote-mark">"</span>
+                    <blockquote>
+                        [REPLACE WITH REAL TESTIMONIAL — 2 to 3 sentences from an actual client. Focus on what made the service stand out: professionalism, ease, quality of service. Get written consent before using.]
+                    </blockquote>
+                    <div class="reviewer-name">[Client Name]</div>
+                    <div class="reviewer-event">[Event Type &mdash; Location, Year]</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT / BOOKING FORM
+         REPLACE: Update the form action="" with your actual endpoint.
+         Example Formspree: action="https://formspree.io/f/YOUR_FORM_ID"
+         Or wire up to your backend handler / email service.
+         ============================================================ -->
+    <section id="contact-form" class="bg-white" style="padding: 80px 20px;">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Request a Quote</h2>
+                <p>Tell us about your event and we'll get back to you within 24 hours with availability and pricing.</p>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <!-- REPLACE action="" with your Formspree endpoint or backend handler -->
+                <form action="" method="POST" id="bartending-form" novalidate>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="full-name">Full Name *</label>
+                            <input type="text" id="full-name" name="full_name" placeholder="Your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(540) 000-0000">
+                        </div>
+                        <div class="form-group">
+                            <label for="event-type">Event Type *</label>
+                            <select id="event-type" name="event_type" required>
+                                <option value="" disabled selected>Select your event type</option>
+                                <option value="wedding">Wedding</option>
+                                <option value="corporate">Corporate</option>
+                                <option value="private-party">Private Party</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="guest-count">Estimated Guest Count *</label>
+                            <input type="number" id="guest-count" name="guest_count" placeholder="e.g. 75" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="event-date">Event Date *</label>
+                            <input type="date" id="event-date" name="event_date" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group" style="grid-column: 1 / -1;">
+                            <label for="message">Tell Us About Your Event</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Share any details about your venue, vision, or questions you have. The more context you give us, the better we can tailor our recommendation."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary">Request a Quote</button>
+                        <p class="form-note">We respond within 24 hours.</p>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Fork in the Road VA</h4>
+                <p>Farm Fresh. Street Smart.</p>
+                <p>Virginia's first farm-to-table mobile catering company</p>
+                <div class="social-links">
+                    <a href="https://facebook.com/forkintheroadva" target="_blank" rel="noopener" aria-label="Facebook" title="Follow us on Facebook">f</a>
+                    <a href="https://instagram.com/forkintheroadva" target="_blank" rel="noopener" aria-label="Instagram" title="Follow us on Instagram">📷</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <p><a href="menu.html">Seasonal Menu</a></p>
+                <p><a href="catering.html">Catering Services</a></p>
+                <p><a href="bartending.html">Bartending</a></p>
+                <p><a href="about.html">About Us</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Service Areas</h4>
+                <!-- REPLACE: Update if bartending service area differs from catering coverage -->
+                <p>Serving Richmond, Charlottesville, and surrounding Central Virginia areas including Ashland, Midlothian, Fredericksburg, Louisa, Short Pump, and Glen Allen</p>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <p><a href="tel:540-807-9045">540-807-9045</a></p>
+                <p><a href="mailto:catering@forkintheroadva.com">catering@forkintheroadva.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Fork in the Road VA. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="analytics.js"></script>
+
+    <script>
+        /* Smooth scroll for in-page anchor links, offset for fixed nav */
+        document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+            anchor.addEventListener('click', function (e) {
+                var target = document.querySelector(this.getAttribute('href'));
+                if (!target) return;
+                e.preventDefault();
+                var navHeight = document.querySelector('nav') ? document.querySelector('nav').offsetHeight : 0;
+                var targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+                window.scrollTo({ top: targetPos, behavior: 'smooth' });
+            });
+        });
+
+        /* Basic required-field validation with visual feedback */
+        document.getElementById('bartending-form').addEventListener('submit', function (e) {
+            var fields = this.querySelectorAll('[required]');
+            var allValid = true;
+
+            fields.forEach(function (field) {
+                field.style.borderColor = '';
+                if (!field.value.trim()) {
+                    field.style.borderColor = '#c0392b';
+                    allValid = false;
+                }
+            });
+
+            if (!allValid) {
+                e.preventDefault();
+                var firstInvalid = this.querySelector('[required][style*="c0392b"]');
+                if (firstInvalid) firstInvalid.focus();
+            }
+        });
+    </script>
+
+</body>
+</html>
